@@ -1,0 +1,39 @@
+
+	<table border=3>
+		<tr>
+			<td align="center"> Product ID </td>
+			<td align="center"> Name </td>
+			<td align="center"> Price </td>
+			<td align="center"> Manufacture Date </td>
+			<td align="center"> Best Before Date </td>
+			<td align="center"> Details </td>
+			<td align="center"> Brand </td>
+			<td align="center"> Status </td>
+			<td align="center"> available quantity </td>
+			<td align="center"> Product Code </td>
+			<td align="center"> Image </td>
+			<td align="center">Active/Not</td>
+			<td align="center"></td>
+			<td align="center"></td>
+
+		</tr>
+		<% @all_products.each do |prod| %>
+			<tr align='center'>
+				<td align="center"> <%= prod.id %> </td>
+				<td align="center"> <%= prod.name%> </td>
+				<td align="center"> <%= prod.price%> </td>
+				<td align="center"><%= prod.manufacture_date%> </td>
+				<td align="center"><%= prod.best_before_date%> </td>
+				<td align="center"><%= prod.details%> </td>
+				<td align="center"> <%= prod.brand%> </td>
+				<td align="center"> <%= prod.status%> </td>
+				<td align="center"><%= prod.avialable_quantity%> </td>
+				<td align="center"><%= prod.product_code%> </td>
+				<td align="center"><img class = "smallimg" src="<%= prod.image.url %>" alt="Card image cap"></td>
+				<td align="center"><%= prod.active %></td>
+				<td align="center"><%= link_to 'Edit', edit_product_path(prod.id) %> </td>
+				<td align="center"><%= link_to 'Show', product_path(prod.id) %> </td>
+			</tr>
+			<% end %>
+
+	</table>

@@ -1,0 +1,30 @@
+<table class="table">
+
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>Item Name</th>
+      <th></th>
+      <th>Unit Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+  		<% current_order.order_items.each do |bill| %>
+        <tr>
+          <th scope="row">1</th>
+          <td><%= bill.product.name %></td>
+          <td><img class="billimage" src="<%= bill.product.image.url %>" alt="Image not Available"></td>
+          <td><%= bill.unit_price %></td>
+          <td><%= bill.quantity %></td>
+          <td><%= bill.total_price %></td>
+        </tr>
+      <% end %>
+      <tr>
+        <th colspan = 5>Grand Total</th>
+        <td> <%= current_order.subtotal %></td>
+      </tr>
+  </tbody>
+</table>
+<%= link_to 'buy', success_path(current_order.id),  class: "btn btn-default btn-success" %>

@@ -1,0 +1,42 @@
+  <center> <h2> Purchase History </h2> </center>
+<div>
+  <%= will_paginate @purchases, renderer: BootstrapPagination::Rails %>
+</div>
+
+<table class="table">
+
+  <thead class="thead-inverse">
+    <tr>
+      <th>Item Name</th>
+      <th></th>
+      <th>Date of Purchase </th>
+      <th>Unit Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+      <th>Status</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  		<% @purchases.each do |bill| %>
+      
+        <tr>
+          <td><%= Product.unscoped.find(bill.product_id).name %></td>
+          <td><img class="billimage" src="<%= Product.unscoped.find(bill.product_id).image.url %>" alt="Image not Available"></td>
+          <td><%= bill.updated_at.to_date %> </td>
+          <td><%= bill.unit_price %></td>
+          <td><%= bill.quantity %></td>
+          <td><%= bill.total_price %></td>
+          <td><%= bill.status %> </td>
+        </tr>
+      
+    <% end %>
+    <tr>
+     <th colspan = 5>Grand Total</th>
+      <td> <%= current_order.subtotal %></td>
+         </tr>
+  </tbody>
+</table>
+<div>
+  <%= will_paginate @purchases, renderer: BootstrapPagination::Rails %>
+</div>

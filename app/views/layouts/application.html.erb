@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ShoppingCartExample</title>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+      <%= render 'layouts/mainpage' %>
+
+    <div class="container">
+      <hr>
+      <%= flash[:notice] %>
+      <%= yield %>
+    </div>
+
+  </body>
+</html>

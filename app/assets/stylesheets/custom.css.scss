@@ -1,0 +1,29 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+.billimage{
+	height: 120px;
+	width: 120px;
+}
+.card{
+	float: left;
+	height: auto;
+	width: 250px;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+	background-color: #d2d2d2;
+}
+.card-img-top{
+	height: 200px;
+    width: 180px;
+}
+.displayprofile{
+	height: auto;
+	width: 250px;
+	background-color: #c0e5c3;
+	font-family: Georgia, serif;
+
+}
+.smallimg{
+	height: 50px;
+	width: 50px;
+}

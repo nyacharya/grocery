@@ -1,0 +1,43 @@
+<%= form_for @user , url: { action: "update" } do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+ 
+  <div class="field">
+    <%= f.label :phoneno %>
+    <%= f.text_field :phoneno %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email , :disabled => true%>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_area :address %>
+  </div>
+
+
+  
+  <% f.hidden_field :admin , :value => false %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<%= link_to "Login", @user_session_path %>

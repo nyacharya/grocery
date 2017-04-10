@@ -1,0 +1,8 @@
+<div class="row">
+  
+    <% @product.each do |product| %>
+      <%= render "product_row", product: product, order_item: @order_item %>
+    <% end %>
+  
+</div>
+<h3> <p class="card-text"><%= @product.first.details %></p> </div>
